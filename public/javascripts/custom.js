@@ -1,6 +1,6 @@
 // dropdown nav bar
 $(document).ready(function () {
-  $(".dropdown-trigger").dropdown({
+  $("#user-dropdown").dropdown({
     hover: true,
     alignment: "bottom",
     coverTrigger: false
