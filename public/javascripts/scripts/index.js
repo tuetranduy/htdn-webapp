@@ -71,6 +71,8 @@ function register() {
 
       if (response.isSuccess === true) {
 
+        closeModal()
+
         M.toast({
           html: 'Register successfully'
         });

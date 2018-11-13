@@ -54,3 +54,10 @@ function clearModal() {
     document.getElementById("sc").innerHTML = "";
   });
 }
+
+// close register-modal
+function closeModal() {
+  var regisModal = document.querySelector("#regis-modal");
+  var regisModalInstance = M.Modal.getInstance(regisModal);
+  regisModalInstance.close()
+};
