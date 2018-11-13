@@ -1,0 +1,46 @@
+<div class="input-field col s6">
+  <input id="txtUsername" type="text" class="validate" name="txtUsername" required autofocus>
+  <label for="txtUsername">Username</label>
+  <p id="username-validation" style="color: red"></p>
+</div>
+
+<div class="input-field col s6">
+  <input id="txtPassword" type="password" class="validate" required>
+  <label for="txtPassword">Password</label>
+  <p id="password-validation" style="color: red"></p>
+</div>
+
+<p>
+  <label>
+    <input type="checkbox" />
+    <span>Remember me</span>
+  </label>
+</p>
+<input type="submit" />
+<a class="waves-effect waves-light btn" id="btnSubmit">Login</a>
+<a class="waves-effect waves-light btn">Forgot password</a>
+<a id="registerlink" class="modal-trigger" href="#regis-modal">
+  <span>
+    <i>Dont't have an account? Register now</i>
+  </span>
+</a>
+<p id="account-validate" style="color: red"></p>
+
+<script>
+  document.getElementById("btnSubmit").onclick = function () {
+    return login()
+  };
+  
+  $(function () {
+    $('form').each(function () {
+      $(this).find('input').keypress(function (e) {
+        // Enter pressed?
+        if (e.which == 10 || e.which == 13) {
+          return login()
+        }
+      });
+
+      $(this).find('input[type=submit]').hide();
+    });
+  });
+</script>

@@ -1,0 +1,32 @@
+<ul id="user-option" class="dropdown-content">
+  <li><a href="#!">My Profile</a></li>
+  <li class="divider"></li>
+  <li><a href="/logout">Log Out</a></li>
+</ul>
+
+<nav>
+  <div class="navbar-fixed">
+    <a href="#!" class="brand-logo center">Logo</a>
+    <ul class="left hide-on-med-and-down">
+      <li class="active">
+        <a href="#">Homepage</a>
+      </li>
+      <li>
+        <a href="#">About us</a>
+      </li>
+    </ul>
+
+    <ul class="right hide-on-med-and-down">
+      <div class="chip">
+        <img src="/images/yuna.jpg" alt="profile-ico">
+        <%= name %>
+      </div>
+      <!-- Dropdown Trigger -->
+      <li>
+        <a class="dropdown-trigger" href="#!" data-target="user-option">Welcome back, <b>
+            <%= username %></b> !
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
