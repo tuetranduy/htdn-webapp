@@ -76,8 +76,9 @@ function register() {
         M.toast({
           html: 'Register successfully'
         });
+
       } else {
-        
+
         M.toast({
           html: 'An unknown error has occurred'
         });

@@ -1,13 +1,13 @@
 var express = require("express");
 var router = express.Router();
 var axios = require("axios");
-var constant = require("../common/constant");
+var config = require("../common/config");
 var jwt = require("jsonwebtoken");
 var _ = require('lodash');
 const logger = require("../helper/logger")
 
 function getUserInformation() {
-  return axios.get(constant.API_URL + `getUserInfoByUserName?username=${decodedToken.username}`, {
+  return axios.get(config.application.API_URL + `getUserInfoByUserName?username=${decodedToken.username}`, {
       headers: {
         "Authorization": token
       }
@@ -24,7 +24,7 @@ router.get("/dashboard", (req, res) => {
 
   token = req.cookies.token
 
-  decodedToken = jwt.verify(token, constant.SECRET_KEY);
+  decodedToken = jwt.verify(token, config.application.SECRET_KEY);
   logger
 
   // console.log(decodedToken)

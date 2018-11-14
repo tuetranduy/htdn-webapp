@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var axios = require("axios");
-var constant = require("../common/constant")
+var config = require("../common/config")
 
 /* GET home page. */
 router.get("/", function (req, res) {
@@ -24,7 +24,7 @@ router.get("/logout", function (req, res) {
 
 router.post("/login", function (req, res) {
 
-  axios.post(constant.API_URL + "login", {
+  axios.post(config.application.API_URL + "login", {
       username: req.body.username,
       password: req.body.password
     })
@@ -48,7 +48,9 @@ router.post("/login", function (req, res) {
 
 router.post("/createAccount", function (req, res) {
 
-  axios.post(constant.API_URL + "createAccount", {
+  console.log(config.application.API_URL)
+
+  axios.post(config.application.API_URL + "createAccount", {
       username: req.body.username,
       password: req.body.password,
       firstname: req.body.firstname,
