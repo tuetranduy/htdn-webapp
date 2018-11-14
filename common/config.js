@@ -1,6 +1,6 @@
 const envConfig = require("./env.config");
 
-const env = process.env.NODE_ENV || "development";
+const env = process.env.ENV || "development";
 
 module.exports = Object.freeze({
   application: {
