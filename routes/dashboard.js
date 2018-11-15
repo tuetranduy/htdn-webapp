@@ -4,7 +4,8 @@ var axios = require("axios");
 var config = require("../common/config");
 var jwt = require("jsonwebtoken");
 var _ = require('lodash');
-const logger = require("../helper/logger")
+
+var decodedToken = undefined
 
 function getUserInformation() {
   return axios.get(config.application.API_URL + `getUserInfoByUserName?username=${decodedToken.username}`, {
@@ -24,23 +25,21 @@ router.get("/dashboard", (req, res) => {
 
   token = req.cookies.token
 
-  decodedToken = jwt.verify(token, config.application.SECRET_KEY);
-  logger
-
-  // console.log(decodedToken)
+  try {
+    decodedToken = jwt.verify(token, config.application.SECRET_KEY);
+  } catch (error) {
+    res.redirect("/")
+    console.log(error)
+  }
 
   getUserInformation(req).then((data) => {
 
-    if (token !== undefined) {
-      res.render("screens/dashboard/dashboard", {
-        title: "Dashboard",
-        username: decodedToken.username,
-        name: _.toUpper(decodedToken.scope.name),
-        phone: data.phone
-      });
-    } else {
-      res.redirect("/")
-    }
+    res.render("screens/dashboard/dashboard", {
+      title: "Dashboard",
+      username: decodedToken.username,
+      name: _.toUpper(decodedToken.scope.name),
+      phone: data.phone
+    });
   })
 
 });
