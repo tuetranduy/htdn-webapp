@@ -47,7 +47,7 @@ function register() {
   var bd = document.getElementById("birthday").value;
   var sc = document.getElementById("school").value;
 
-  if (fn !== "" && ln !== "" && em !== "" & pn !== "" & un !== "" & pw !== "" & rpw !== "" & bd !== "" & sc !== "") {
+  if (fn !== "" && ln !== "" && em !== "" & pn !== "" & un !== "" & pw !== "" & rpw !== "" & bd !== "" & sc !== "" & rpw === pw) {
     // Register
     $.ajax({
       url: "/createAccount",
@@ -86,31 +86,31 @@ function register() {
     });
   } else {
     if (fn == "") {
-      document.getElementById("fn").innerHTML = "Plese enter first name";
+      document.getElementById("fn").innerHTML = "Please enter first name";
     }
     if (ln == "") {
-      document.getElementById("ln").innerHTML = "Plese enter last name";
+      document.getElementById("ln").innerHTML = "Please enter last name";
     }
     if (em == "") {
       document.getElementById("em").innerHTML = "Please enter email";
     }
     if (pn == "") {
-      document.getElementById("pn").innerHTML = "Plese enter phone number";
+      document.getElementById("pn").innerHTML = "Please enter phone number";
     }
     if (un == "") {
-      document.getElementById("un").innerHTML = "Plese enter username";
+      document.getElementById("un").innerHTML = "Please enter username";
     }
     if (pw == "") {
-      document.getElementById("pw").innerHTML = "Plese enter password";
+      document.getElementById("pw").innerHTML = "Please enter password";
     }
-    if (rpw == "") {
+    if (rpw != pw) {
       document.getElementById("rpw").innerHTML = "Confirmation password not match";
     }
     if (bd == "") {
-      document.getElementById("bd").innerHTML = "Plese enter your birthday";
+      document.getElementById("bd").innerHTML = "Please enter your birthday";
     }
     if (sc == "") {
-      document.getElementById("sc").innerHTML = "Plese enter your university";
+      document.getElementById("sc").innerHTML = "Please enter your university";
     }
   }
 }
