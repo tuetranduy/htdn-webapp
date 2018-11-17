@@ -5,41 +5,97 @@
       <h4 class="header2" style="text-align: center">Book a slot now</h4>
       <div class="row">
         <form class="col s12">
+
+          <!-- Name -->
           <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s11">
               <i class="material-icons prefix">account_circle</i>
-              <input id="booking_name" type="text" value="<%= name %>" autofocus>
+              <input id="first_name" type="text" value="<%= name %>" autofocus onfocus="return displayTooltipForName();"
+                onblur="return dismissTooltipForName();">
               <label for="first_name" class="">Name</label>
             </div>
+            <div class="input-field col s1">
+              <i id="nameTooltip" class="material-icons prefix tooltipped" data-position="bottom" data-tooltip="Hãy nhập tên thật của bạn để đề phòng mọi tình huống có thể xảy ra nhé">help_outline</i>
+            </div>
           </div>
+          <!-- end of name -->
+
+          <!-- phone -->
           <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s11">
               <i class="material-icons prefix">phone</i>
-              <input id="phone" type="tel" value="<%= phone %>">
+              <input id="phone" type="tel" value="<%= phone %>" class="validate valid" onfocus="return displayTooltipForPhone();"
+                onblur="return dismissTooltipForPhone();">
               <label for="phone" class="active">Phone</label>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="material-icons prefix">lock_outline</i>
-              <input id="password5" type="password" class="validate valid">
-              <label for="password" class="active">Password</label>
+            <div class="input-field col s1">
+              <i id="phoneTooltip" class="material-icons prefix tooltipped" data-position="bottom" data-tooltip="Hãy nhập số điện thoại của bạn để chúng tôi có thể xác nhận việc đặt lịch">help_outline</i>
             </div>
           </div>
+          <!-- end of phone -->
+
+          <!-- Subject -->
           <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s11">
+              <i class="material-icons prefix">book</i>
+              <input id="subject" type="text" onfocus="return displayTooltipForSubject();" onblur="return dismissTooltipForSubject();">
+              <label for="subject" class="active">Subject</label>
+            </div>
+            <div class="input-field col s1">
+              <i id="subjectTooltip" class="material-icons prefix tooltipped" data-position="bottom" data-tooltip="Hãy nhập tên môn học bạn cần học giúp nhé">help_outline</i>
+            </div>
+          </div>
+          <!-- end of subject -->
+
+          <!-- time -->
+          <div class="row">
+            <div class="input-field col s5">
+              <i class="material-icons prefix">timer</i>
+              <input id="bookingdate" type="text" class="datepicker">
+              <label for="bookingdate" class="active">Date</label>
+            </div>
+
+            <div class="input-field col s3">
+              <input id="fromTime" type="text" class="timepicker">
+              <label for="fromTime" class="active">From</label>
+            </div>
+
+            <div class="input-field col s3">
+              <input id="toTime" type="text" class="timepicker">
+              <label for="toTime" class="active">To</label>
+            </div>
+
+            <div class="input-field col s1">
+              <i class="material-icons prefix tooltipped" data-position="bottom" data-tooltip="Hãy nhập thời gian bạn cần học giúp">help_outline</i>
+            </div>
+          </div>
+          <!-- end of time -->
+
+          <!-- message -->
+          <div class="row">
+
+            <div class="input-field col s11">
               <i class="material-icons prefix">question_answer</i>
-              <textarea id="message4" class="materialize-textarea validate" length="120" style="height: 45px;"></textarea>
+              <textarea id="message" class="materialize-textarea validate" length="120" style="height: 45px;" onfocus="return displayTooltipForMessage();"
+                onblur="return dismissTooltipForMessage();"></textarea>
               <label for="message" class="">Message</label>
             </div>
+
+            <div class="input-field col s1">
+              <i id="messageTooltip" class="material-icons prefix tooltipped" data-position="bottom" data-tooltip="Hãy nhập vào câu hỏi bạn muốn gửi cho chúng tôi">help_outline</i>
+            </div>
+
             <div class="row">
               <div class="input-field col s12">
-                <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                <button id="btnBookingSubmit" class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
                   <i class="material-icons right">send</i>
                 </button>
               </div>
             </div>
+
           </div>
+          <!-- end of message -->
+
         </form>
       </div>
     </div>

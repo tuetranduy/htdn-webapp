@@ -37,6 +37,7 @@ router.post("/login", function (req, res) {
 
     })
     .catch(function (error) {
+      console.log(error)
 
       res.send({
         isAuthenticate: false
@@ -48,13 +49,11 @@ router.post("/login", function (req, res) {
 
 router.post("/createAccount", function (req, res) {
 
-  console.log(config.application.API_URL)
-
   axios.post(config.application.API_URL + "createAccount", {
       username: req.body.username,
       password: req.body.password,
       firstname: req.body.firstname,
-      lastname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
       gender: req.body.gender,
       phone_number: req.body.phone_number,
@@ -67,6 +66,7 @@ router.post("/createAccount", function (req, res) {
       })
     })
     .catch(function (error) {
+      console.log(error)
       res.send({
         isSuccess: false
       })

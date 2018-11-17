@@ -1,22 +1,27 @@
-#loginform{
+#loginform {
     padding-top: 60px
 }
 
-h1#loginform{
+h1#loginform {
     text-align: center;
     font-size: 30px;
 }
 
-a#registerlink{
+a#registerlink {
     margin-left: 15px
 }
 
-#place_order{
+#place_order {
     text-align: center
 }
 
-#booking-div{
-    width: 50%; 
+#booking-div {
+    width: 50%;
     margin: auto;
     padding-top: 30px
+}
+
+#btnBookingSubmit {
+    margin-right: 65px;
+    margin-top: 20px
 }

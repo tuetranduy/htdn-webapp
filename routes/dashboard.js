@@ -40,6 +40,7 @@ router.get("/dashboard", (req, res) => {
       name: _.toUpper(decodedToken.scope.name),
       phone: data.phone
     });
+
   })
 
 });

@@ -55,9 +55,96 @@ function clearModal() {
   });
 }
 
+// init tootip
+document.addEventListener('DOMContentLoaded', function () {
+  var bookingTootips = document.querySelectorAll('.tooltipped');
+  var bookingTootipInstance = M.Tooltip.init(bookingTootips, {});
+});
+
+// init timepicker
+document.addEventListener('DOMContentLoaded', function () {
+  var timePicker = document.querySelectorAll('.timepicker');
+  var instances = M.Timepicker.init(timePicker, {
+    twelveHour: true,
+    showClearBtn: true
+  });
+});
+
 // close register-modal
 function closeModal() {
   var regisModal = document.querySelector("#regis-modal");
   var regisModalInstance = M.Modal.getInstance(regisModal);
   regisModalInstance.close()
 };
+
+// tooltip handle for Name =====
+function displayTooltipForName() {
+  $(document).ready(function () {
+    var nameTooltip = document.querySelector("#nameTooltip");
+    var nameTooltipInstance = M.Tooltip.getInstance(nameTooltip);
+    nameTooltipInstance.open()
+  })
+}
+
+function dismissTooltipForName() {
+  $(document).ready(function () {
+    var nameTooltip = document.querySelector("#nameTooltip");
+    var nameTooltipInstance = M.Tooltip.getInstance(nameTooltip);
+    nameTooltipInstance.close()
+  })
+}
+// end of tooltip handle for Name =====
+
+// tooltip handle for Phone =====
+function displayTooltipForPhone() {
+  $(document).ready(function () {
+    var phoneTooltip = document.querySelector("#phoneTooltip");
+    var phoneTooltipInstance = M.Tooltip.getInstance(phoneTooltip);
+    phoneTooltipInstance.open()
+  })
+}
+
+function dismissTooltipForPhone() {
+  $(document).ready(function () {
+    var phoneTooltip = document.querySelector("#phoneTooltip");
+    var phoneTooltipInstance = M.Tooltip.getInstance(phoneTooltip);
+    phoneTooltipInstance.close()
+  })
+}
+// end of tooltip handle for Phone =====
+
+// tooltip handle for Subject =====
+function displayTooltipForSubject() {
+  $(document).ready(function () {
+    var subjectTooltip = document.querySelector("#subjectTooltip");
+    var subjectTooltipInstance = M.Tooltip.getInstance(subjectTooltip);
+    subjectTooltipInstance.open()
+  })
+}
+
+function dismissTooltipForSubject() {
+  $(document).ready(function () {
+    var subjectTooltip = document.querySelector("#subjectTooltip");
+    var subjectTooltipInstance = M.Tooltip.getInstance(subjectTooltip);
+    subjectTooltipInstance.close()
+  })
+}
+// end of tooltip handle for Subject =====
+
+// tooltip handle for message =====
+function displayTooltipForMessage() {
+  $(document).ready(function () {
+    var messageTooltip = document.querySelector("#messageTooltip");
+    var messageTooltipInstance = M.Tooltip.getInstance(messageTooltip);
+    messageTooltipInstance.open()
+  })
+}
+
+function dismissTooltipForMessage() {
+  $(document).ready(function () {
+    var messageTooltip = document.querySelector("#messageTooltip");
+    var messageTooltipInstance = M.Tooltip.getInstance(messageTooltip);
+    messageTooltipInstance.close()
+  })
+}
+// end of tooltip handle for Subject =====
